@@ -1,5 +1,6 @@
 # react-forms-1
-
+### Check our `PersonStats.jsx` for comments. 
+### Score : 3/5
 ### Exercise 1: Basic Form with a Stateful Component
 - Create a new react app called `feelings-app`
 - Create a `AppContainer` component to maintain shared stat

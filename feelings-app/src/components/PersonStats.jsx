@@ -17,6 +17,7 @@ class PersonStats extends Component{
 
        event.preventDefault();
         //use this.state to change the current value of the properties to whatever the user puts in
+        // !! you should be setting state individually
         this.setState(
             {
                 name: event.target.value,
@@ -27,6 +28,7 @@ class PersonStats extends Component{
         //Get a reference to the innerText of the additional div under the form
         let userFeelings = document.getElementById('renderedFeelings');
         //Use the reference to change the inner HTML to give the current state of each property
+        // !! no need to use `this` here, it's a local variable in your function
         this.userFeelings.innerText = `Hello ${this.state.name}. Your age is ${this.state.age} and you're feeling ${this.state.feelings}`;
         
     }
