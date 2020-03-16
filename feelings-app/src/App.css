@@ -1,0 +1,11 @@
+body{
+  background-color: rgb(134, 31, 134);
+}
+
+.App {
+  text-align: center;
+  background-color: rgb(185, 173, 173);
+  color: rgb(134, 31, 134);
+  height: 95vh;
+  font-size: 18px;
+}
