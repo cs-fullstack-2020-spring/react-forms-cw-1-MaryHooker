@@ -16,21 +16,36 @@ class PersonStats extends Component{
     buttonClicked = (event) =>{
 
        event.preventDefault();
-        //use this.state to change the current value of the properties to whatever the user puts in
-        this.setState(
-            {
-                name: event.target.value,
-                age:event.target.value,
-                feelings: event.target.value
-            }
-        )
+            
         //Get a reference to the innerText of the additional div under the form
         let userFeelings = document.getElementById('renderedFeelings');
         //Use the reference to change the inner HTML to give the current state of each property
-        this.userFeelings.innerText = `Hello ${this.state.name}. Your age is ${this.state.age} and you're feeling ${this.state.feelings}`;
+        userFeelings.innerText = `Hello ${this.state.name}. Your age is ${this.state.age} and you're feeling ${this.state.feelings}`;
         
     }
 
+    changedName = (evt) =>{
+        this.setState(
+            {
+                name: evt.target.value
+            }
+        )
+    }
+    changedAge = (evt) =>{
+        this.setState(
+            {
+                age: evt.target.value
+            }
+        )
+    }
+    changedFeeling = (evt) =>{
+        this.setState(
+            {
+                feelings: evt.target.value
+            }
+        )
+    }
+   
 
     render(){
       
@@ -41,21 +56,22 @@ class PersonStats extends Component{
                         <legend>Feeling Reflections</legend>
 
                         <label htmlFor="name">Name:</label>
-                        <input type="text" id='name'onChange={this.buttonClicked}/>
+                        <input type="text" id='name'onChange={this.changedName} value={this.state.name}/>
 
                         <label htmlFor="age">Age:</label>
-                        <input type="text" id='age' onChange={this.buttonClicked}/>
+                        <input type="text" id='age' onChange={this.changedAge} value={this.state.age}/>
 
                         <label htmlFor="feelings">Your Feelings:</label>
-                        <textarea name="" id="feelings" cols="30" rows="10" placeholder='start typing...' onChange={this.buttonClicked}></textarea>
+                        <textarea name="" id="feelings" cols="30" rows="10" placeholder='start typing...' onChange={this.changedFeeling} value={this.state.feelings}></textarea>
+
                         {/* Call the function inside of the button */}
-                        <button onClick={this.buttonClicked} onChange={this.newEntry}>Submit</button>
+                        <button onClick={this.buttonClicked}>Submit</button>
 
                     </fieldset>
                 </form>
 
                 <div>
-                <p id='renderedFeelings'>Hello</p>
+                <p id='renderedFeelings'></p>
                 </div>
 
             </div>
